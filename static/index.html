@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Listener Test</title>
+  <title>Lumi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: system-ui, sans-serif; max-width: 760px; margin: 24px auto; padding: 0 12px; }
@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-  <h2>Listener Test</h2>
+  <h2>Lumi</h2>
   <p class="hint">This link must include <code>?auth=...</code>.</p>
 
   <div id="chat"></div>
@@ -65,13 +65,13 @@
     }
 
     const data = await r.json();
-    add("AI", data.reply);
+    add("Lumi", data.reply);
 
     history.push({role:"user", content: msg});
     history.push({role:"assistant", content: data.reply});
   });
 
-  add("AI", "Hi — I’m here with you. What’s on your mind?");
+  add("Lumi", "Hi — I’m here with you. What’s on your mind?");
 </script>
 </body>
 </html>
