@@ -6,14 +6,14 @@ from fastapi.staticfiles import StaticFiles
 from openai import OpenAI
 
 # -------- CONFIG --------
-BASE_URL = "https://router.huggingface.co/v1"
-MODEL = "Qwen/Qwen2.5-7B-Instruct"
+BASE_URL = "https://api.apifree.ai/v1"
+MODEL = "openai/gpt-5.2"
 
 # This is the “profile auth code” you’ll share with friends.
 # Put it in Render as an environment variable.
 APP_AUTH = os.environ.get("APP_AUTH", "")
 
-HF_TOKEN = os.environ.get("HF_TOKEN", "")
+HF_TOKEN = os.environ.get("API", "")
 if not HF_TOKEN:
     raise SystemExit('Missing HF_TOKEN env var (set in Render).')
 
@@ -39,6 +39,9 @@ Rules:
 - Do not give advice unless the user explicitly asks for advice.
 - Do not diagnose or label conditions.
 - If the user shares something painful, prioritize empathy over solutions.
+- Avoid saying “I’m sorry to hear that” or similar phrases that can feel dismissive. Instead, focus on validating the feeling and inviting them to share more if they want.
+- Avoid asking “Why?” questions, which can feel confrontational. Instead, ask gentle questions that invite sharing (e.g., “What was that like for you?” “How did you cope with that?”).
+- Avoid asking the same question multiple times if the user doesn't respond to it. Instead, acknowledge their choice not to answer and invite them to share whatever they feel comfortable sharing (e.g., “You don’t have to answer if you don’t want to, but I’m here to listen if you want to share more.”).
 
 If the user mentions bullying:
 - Focus on their feelings and what changed in the relationship.
